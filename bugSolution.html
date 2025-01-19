@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+
+  <script>
+    //Correct usage of creating and appending elements
+    let newParagraph1 = document.createElement('p');
+    let newText1 = document.createTextNode('This is a paragraph created using createElement');
+    newParagraph1.appendChild(newText1);
+    document.getElementById('myDiv').appendChild(newParagraph1);
+
+    let newParagraph2 = document.createElement('p');
+    let newText2 = document.createTextNode('This is another paragraph created using createElement');
+    newParagraph2.appendChild(newText2);
+    document.getElementById('myDiv').appendChild(newParagraph2);
+
+  </script>
+</body>
+</html>
