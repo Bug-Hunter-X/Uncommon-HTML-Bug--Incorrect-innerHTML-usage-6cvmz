@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+
+  <script>
+    // Incorrectly using innerHTML to add multiple elements
+    document.getElementById("myDiv").innerHTML += "<p>This is a paragraph.</p>" + "<p>This is another paragraph.</p>";
+
+    //The correct usage is to use document.createElement to create elements and then append it to the parent.
+    let newParagraph = document.createElement('p');
+    let newText = document.createTextNode('This is a paragraph created using createElement');
+    newParagraph.appendChild(newText);
+    document.getElementById('myDiv').appendChild(newParagraph);
+  </script>
+</body>
+</html>
